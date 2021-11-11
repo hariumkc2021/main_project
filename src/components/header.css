@@ -1,0 +1,22 @@
+.header-container{
+    height: 10%;
+    background: #252121;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.header-name{
+    color: white;
+    font-size: 65px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+
+.header-btns{
+ width: 20%;
+display: flex;
+justify-content: space-around;
+}

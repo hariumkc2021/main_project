@@ -1,0 +1,18 @@
+.login-container{
+   background-color:#e0eacc;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.login-box{
+      height: 70%;
+      width: 70%;
+      background-color:white;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+}
+

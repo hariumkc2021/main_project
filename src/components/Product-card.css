@@ -1,0 +1,34 @@
+.card-container{
+height: 300px;
+width: 200px;
+background-color:#eae1e6;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+margin:12px;
+cursor: pointer;
+
+}
+.card-container:hover {
+ transform: scale(1.1);
+}
+.card-img{
+    max-width: 180px;
+    max-height: 150px;
+}
+.card-name{
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center
+}
+.card-price{
+    color: red;
+    font-size: 25px;
+}
+.cost-reduce{
+      color:black;
+    font-size: 13px;
+    text-decoration: line-through;
+}

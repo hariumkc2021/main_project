@@ -1,0 +1,24 @@
+.chot-Container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#d2cbcd;
+}
+
+.chot-details{
+    height: 35%;
+    width: 30%;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+}
+
+.sub-details{
+   display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}

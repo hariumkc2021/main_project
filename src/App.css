@@ -3,7 +3,7 @@
 }
 .App-container{
   height: 90%;
-  overflow-y: scroll;
+ /* overflow-y: scroll; */
 }
 .App-logo {
   height: 40vmin;

@@ -1,6 +1,6 @@
 .card-container{
-height: 300px;
-width: 200px;
+height: 400px;
+width: 400px;
 background-color:#eae1e6;
 display: flex;
 flex-direction: column;
@@ -15,8 +15,8 @@ cursor: pointer;
  transform: scale(1.1);
 }
 .card-img{
-    max-width: 180px;
-    max-height: 150px;
+    max-width: 400px; 
+    max-height: 400px;
 }
 .card-name{
     font-size: 15px;

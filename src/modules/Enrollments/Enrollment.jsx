@@ -11,7 +11,7 @@ const override = css`
   margin: 0 auto;
   border-color: red;
 `;
-function ProductList() {
+function Enrollments() {
     //const { productList, } = useContext(AppContext);
     let [loading, setLoading] = useState(true);
     let [color, setColor] = useState("#ffffff");

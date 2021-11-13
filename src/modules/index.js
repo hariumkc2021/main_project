@@ -9,12 +9,16 @@ const CheckOut = lazy(() => import('./Check-out/CheckOut'))
 
 const Layout = (props) => {
     const { user } = useContext(AppContext);
+    const userLs = localStorage.getItem('user');
     const validateAccess = (props) => {
         console.log("user", user)
-        return user ? (props) : (<Redirect to="/auth" />);
+        return (userLs) ? (props) : (<Redirect to="/auth" />);
     }
     const authValidate = (props) => {
-        return user ? (<Redirect to="/productList" />) : (<Login />);
+        return userLs ? (<Redirect to="/productList" />) : (<Login />);
+    }
+    const validateInterAccess=(props)=>{
+        return user ? (props):(<Redirect to="/productList" />)  ;
     }
     return (
         <Suspense
@@ -23,9 +27,9 @@ const Layout = (props) => {
             <Switch>
                 <Route path="/auth" render={(props) => authValidate(<Login />)} />
                 <Route path="/productList" render={(props) => validateAccess(<ProductList />)} />
-                <Route path="/productDetails" render={(props) => validateAccess(<ProductDetails />)} />
-                <Route path="/Cart" render={(props) => validateAccess(< Cart />)} />
-                <Route path="/CheckOut" render={(props) => validateAccess(< CheckOut />)} />
+                <Route path="/productDetails" render={(props) => validateInterAccess(<ProductDetails />)} />
+                <Route path="/Cart" render={(props) => validateInterAccess(< Cart />)} />
+                <Route path="/CheckOut" render={(props) => validateInterAccess(< CheckOut />)} />
                 <Route path="/" render={() => <Redirect to="/auth" />} />
                 {/* <Route path="*" component={NotFound} /> */}
             </Switch>

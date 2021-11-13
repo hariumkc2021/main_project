@@ -23,11 +23,11 @@ function CartCard(props) {
         <>
             <ToastContainer position="bottom-center" autoClose={3000} />
             <div className="crtcd-container">
-                <img style={{ "height": "100%", "width": "30%" }} src={props.data.image}></img>
+                <img style={{ "height": "100%", "width": "30%" }} src={props.data.img}></img>
                 <div class="crtcd-details">
                     <div class="crtcd-rate">
-                        <span style={{ "fontSize": "30px", "fontWeight": "300" }} >{props.data.product_name}</span>
-                        <span style={{ "fontSize": "30px" }}>{"₹" + props.data.unit_price}</span>
+                        <span style={{ "fontSize": "30px", "fontWeight": "300" }} >{props.data.name}</span>
+                        <span style={{ "fontSize": "30px" }}>{ props.data.price +'$'}</span>
                     </div>
                     <span style={{ "color": "green" }}>In Stock</span>
                     <div><Button onClick={e => deleteFromCart(props.data)} variant="contained" color="secondary" startIcon={<DeleteIcon />}> Remove From Cart </Button></div>

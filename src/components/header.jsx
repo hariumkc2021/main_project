@@ -10,13 +10,15 @@ import { useHistory } from 'react-router-dom';
 
 const Login = (props) => {
     const history = useHistory();
-    const { user } = useContext(AppContext);
+    //const { user } = useContext(AppContext);
+    const userLs = localStorage.getItem('user');
     const { setUser } = useContext(AppContext)
     const { cartItems } = useContext(AppContext);
 
     const Logout = () => {
         history.push('/auth');
-        setUser(null)
+        setUser(null);
+        localStorage.removeItem('user');
     }
     const onCart = () => {
         if (cartItems.length > 0) {
@@ -26,8 +28,9 @@ const Login = (props) => {
     return (
         <>
             <div className="header-container">
-                <span className="header-name">HARI KRISHNA REDDY</span>
-                {user ? <span class="header-btns">
+                <img src="https://ucarecdn.com/c358d759-82bd-49e3-b75c-b8827bf10d93/-/preview/100x100/"></img>
+                <span className="header-name">Umkc Fitness Center</span>
+                {userLs ? <span class="header-btns">
                     <Button onClick={e => onCart()} variant="contained" color="default" startIcon={<AddShoppingCartIcon />}>{cartItems.length}</Button>
                     <Button onClick={Logout} variant="contained" color="default" startIcon={<ExitToAppIcon />}>Logout</Button>
                 </span> : null}

@@ -27,7 +27,7 @@ function CheckOut(props) {
     const getTotal = (array) => {
         let total = 0;
         array.forEach(element => {
-            total += Number(element.unit_price)
+            total += Number(element.price.replace('$',''))
         });
         totalAmount = total
         return total;
@@ -53,11 +53,11 @@ function CheckOut(props) {
                     </div>
                     <div class="sub-details" style={{ "borderBottom": "solid beige" }} >
                         <span>Delivery:</span>
-                        <span>₹150</span>
+                        <span>15$</span>
                     </div>
                     <div class="sub-details" style={{ "color": "red", "fontSize": "23px", "borderBottom": "solid beige" }}>
                         <span>Order Total</span>
-                        <span>₹{totalAmount + 150}</span>
+                        <span>₹{totalAmount + 15}</span>
                     </div>
                     <div style={{ "textAlign": "center" }}>
                         <Button onClick={e => placeOrder()} variant="contained" color="primary" type="submit">Place your order</Button>

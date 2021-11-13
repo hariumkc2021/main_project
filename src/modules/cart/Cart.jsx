@@ -12,7 +12,7 @@ function Cart(props) {
     const getTotal = (array) => {
         let total = 0;
         array.forEach(element => {
-            total += Number(element.unit_price)
+            total += Number(element.price.replace('$',''))
         });
         return total;
     }
@@ -32,7 +32,7 @@ function Cart(props) {
                     {cartItems.map((item) => <CartCard key={item.id} data={item}></CartCard>)}
                 </div>
                 <div class="cart-subtot">
-                    <span>Subtotal({cartItems.length} ) :₹<span style={{ "color": "red", "fontSize": "30px" }}> {getTotal(cartItems)}</span></span>
+                    <span>Subtotal({cartItems.length} ) :<span style={{ "color": "red", "fontSize": "30px" }}> {getTotal(cartItems)}$</span></span>
                     <Button onClick={e => proceedTOPay()} variant="contained" color="primary" type="submit">Proceed to pay</Button>
                 </div>
             </div >

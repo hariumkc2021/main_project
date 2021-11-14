@@ -33,7 +33,7 @@ function ProductList() {
         let value = e.currentTarget.value.toLowerCase();
         let filtArry = [];
         productList.forEach(element => {
-            let text = element.product_name.toLowerCase() + element.category.toLowerCase();
+            let text = element.name.toLowerCase() ;
             if (text.indexOf(value) >= 0) {
                 filtArry.push(element)
             }

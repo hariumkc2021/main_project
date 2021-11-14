@@ -29,7 +29,7 @@ const Login = (props) => {
     return (
         <>
             <div className="header-container">
-                <img src="https://ucarecdn.com/c358d759-82bd-49e3-b75c-b8827bf10d93/-/preview/100x100/"></img>
+                <img src="https://ucarecdn.com/f62c7374-7923-4535-8cc0-0a3bea547c7d/-/preview/100x100/"></img>
                 <span className="header-name">UMKC Fitness Center</span>
                 {userLs ? <span class="header-btns">
                     <Button onClick={e=>history.push('enrollments')} variant="contained" color="default" startIcon={<SubscriptionsIcon />}>STREAM</Button>  

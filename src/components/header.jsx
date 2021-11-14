@@ -5,6 +5,7 @@ import './header.css';
 import { Button } from '@material-ui/core';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import { AppContext } from '../contexts/AppContext';
 import { useHistory } from 'react-router-dom';
 
@@ -29,10 +30,11 @@ const Login = (props) => {
         <>
             <div className="header-container">
                 <img src="https://ucarecdn.com/c358d759-82bd-49e3-b75c-b8827bf10d93/-/preview/100x100/"></img>
-                <span className="header-name">Meghana Fitness Center</span>
+                <span className="header-name">UMKC Fitness Center</span>
                 {userLs ? <span class="header-btns">
+                    <Button onClick={e=>history.push('enrollments')} variant="contained" color="default" startIcon={<SubscriptionsIcon />}>STREAM</Button>  
                     <Button onClick={e => onCart()} variant="contained" color="default" startIcon={<AddShoppingCartIcon />}>{cartItems.length}</Button>
-                    <Button onClick={Logout} variant="contained" color="default" startIcon={<ExitToAppIcon />}>Logout</Button>
+                    <Button onClick={Logout} variant="contained" color="default" startIcon={<ExitToAppIcon />}>Logout</Button>   
                 </span> : null}
             </div >
 

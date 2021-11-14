@@ -3,18 +3,27 @@ import './CheckOut.css';
 import { Button } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
-import { AppContext } from '../../contexts/AppContext';
 import LoadingOverlay from 'react-loading-overlay';
+import { AppContext } from '../../contexts/AppContext';
+import axios from 'axios';
 
-//import { AppContext } from '../contexts/AppContext';
 
 function CheckOut(props) {
     const history = useHistory();
     const { setCartItemsfn } = useContext(AppContext);
     const [enabSpinner, setSinner] = useState(false);
-
+    const userLs = localStorage.getItem('user');
+    const userData=JSON.parse(userLs);
+    const { cartItems } = useContext(AppContext);
     const placeOrder = () => {
         setSinner(true);
+        axios.put(`https://umkc-project.herokuapp.com/enrollments?userName=${userData.data.userName}`,cartItems)
+        .then(function (response) {
+            console.log("response",response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
         setTimeout(() => {
             history.go(-3)
             setCartItemsfn([]);
@@ -22,7 +31,7 @@ function CheckOut(props) {
         }, 4000)
         toast.success("Order placed")
     }
-    const { cartItems } = useContext(AppContext);
+   
     let totalAmount
     const getTotal = (array) => {
         let total = 0;

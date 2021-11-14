@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Cart.css';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../contexts/AppContext';
-import CartCard from '../../components/Cart-card/CartCard'
+import CartCard from '../../components/Cart-card/CartCard';
 import { Button } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 

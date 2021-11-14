@@ -6,6 +6,7 @@ const ProductList = lazy(() => import('./products-list/ProductsList'));
 const ProductDetails = lazy(() => import('./product-details/ProductDetails'));
 const Cart = lazy(() => import('./cart/Cart'))
 const CheckOut = lazy(() => import('./Check-out/CheckOut'))
+const Enrollments =lazy(()=> import('./Enrollments/Enrollment'))
 
 const Layout = (props) => {
     const { user } = useContext(AppContext);
@@ -30,6 +31,7 @@ const Layout = (props) => {
                 <Route path="/productDetails" render={(props) => validateInterAccess(<ProductDetails />)} />
                 <Route path="/Cart" render={(props) => validateInterAccess(< Cart />)} />
                 <Route path="/CheckOut" render={(props) => validateInterAccess(< CheckOut />)} />
+                <Route path="/enrollments" render={(props)=>validateAccess(<Enrollments />)} />
                 <Route path="/" render={() => <Redirect to="/auth" />} />
                 {/* <Route path="*" component={NotFound} /> */}
             </Switch>

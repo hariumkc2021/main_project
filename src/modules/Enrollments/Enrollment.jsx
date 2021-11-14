@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import './ProductList.css';
-import ProductCard from '../../components/Product-card.jsx';
+import './Enrollment.css';
+import EnrollementCard from '../../components/EnrollmentCard/EnrollementCard';
 import { AppContext } from '../../contexts/AppContext';
 import { Button, TextField } from '@material-ui/core';
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
+
+
 const override = css`
   display: block;
   margin: 0 auto;
@@ -17,8 +19,10 @@ function Enrollments() {
     let [color, setColor] = useState("#ffffff");
     const[productList,setProductList]=useState([]);
     const [filteredItems, setFilteredItems] = useState([])
+    const userLs = localStorage.getItem('user');
+    const userData=JSON.parse(userLs);
     useEffect(() => {
-        axios.get('https://umkc-project.herokuapp.com/programs')
+        axios.get(`https://umkc-project.herokuapp.com/enrollments?userName=${userData.data.userName}`)
         .then(function (response) {
             setProductList(response.data);
             setFilteredItems(response.data);
@@ -42,13 +46,14 @@ function Enrollments() {
     }
     return (
         <>
+        
         <div className="product-container">
          {loading? <ClipLoader color={color} loading={loading} css={override} size={150} />:
             <div>
             < TextField placeholder="category/product" label="Search" onChange={e => Search(e)} name="email" variant="outlined" />
             <div className="product-list-container">
                 {filteredItems.map((ele) =>
-                    <ProductCard key={ele.id} data={ele} ></ProductCard>
+                    <EnrollementCard key={ele.id} data={ele} ></EnrollementCard>
                 )}
             </div>
             </div>}
@@ -57,5 +62,5 @@ function Enrollments() {
     );
 }
 
-export default ProductList
+export default Enrollments;
 

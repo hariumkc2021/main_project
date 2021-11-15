@@ -45,8 +45,8 @@ const Login = (props) => {
                 {toastTxt}</Alert> : null}
             < div className="login-container">
                 <form className="login-box" onSubmit={e => onLogin(e)}>
-                    <TextField label="email" name="email" variant="outlined" />
-                    <TextField type="password" name="password" label="password" variant="outlined" />
+                    <TextField label="Username or email address" name="email" variant="outlined" />
+                    <TextField type="password" name="password" label="Password" variant="outlined" />
                     <Button variant="contained" color="primary" type="submit">Login</Button>
                 </form>
             </div>

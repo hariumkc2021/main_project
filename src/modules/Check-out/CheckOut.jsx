@@ -48,7 +48,7 @@ function CheckOut(props) {
                 enabSpinner ? <LoadingOverlay
                     active={true}
                     spinner
-                    text='A Moments of Delivered on Time'
+                    text='At-home health & fitness made easy'
                 >
                 </LoadingOverlay> : null
             }

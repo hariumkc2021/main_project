@@ -61,7 +61,7 @@ function CheckOut(props) {
                         <span>${getTotal(cartItems)}</span>
                     </div>
                     <div class="sub-details" style={{ "borderBottom": "solid beige" }} >
-                        <span>Delivery:</span>
+                        <span>Tax:</span>
                         <span>$15</span>
                     </div>
                     <div class="sub-details" style={{ "color": "red", "fontSize": "23px", "borderBottom": "solid beige" }}>

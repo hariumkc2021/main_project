@@ -48,7 +48,7 @@ function CheckOut(props) {
                 enabSpinner ? <LoadingOverlay
                     active={true}
                     spinner
-                    text='A Moments of Delivered on Time'
+                    text='At-home health & fitness made easy'
                 >
                 </LoadingOverlay> : null
             }
@@ -58,15 +58,15 @@ function CheckOut(props) {
                     <div style={{ "fontSize": "25px", "borderBottom": "solid beige" }}>Order Summary</div>
                     <div class="sub-details" >
                         <span>Items:</span>
-                        <span>₹{getTotal(cartItems)}</span>
+                        <span>${getTotal(cartItems)}</span>
                     </div>
                     <div class="sub-details" style={{ "borderBottom": "solid beige" }} >
-                        <span>Delivery:</span>
-                        <span>15$</span>
+                        <span>Tax:</span>
+                        <span>$15</span>
                     </div>
                     <div class="sub-details" style={{ "color": "red", "fontSize": "23px", "borderBottom": "solid beige" }}>
                         <span>Order Total</span>
-                        <span>₹{totalAmount + 15}</span>
+                        <span>${totalAmount + 15}</span>
                     </div>
                     <div style={{ "textAlign": "center" }}>
                         <Button onClick={e => placeOrder()} variant="contained" color="primary" type="submit">Place your order</Button>

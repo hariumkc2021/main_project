@@ -36,7 +36,7 @@ const ProductDetails = (props) => {
                 <div className="pd-details">
                     <div className="pd-name" > {selectedProduct['name']}</div>
                     <div>
-                        <span><span style={{ "color": "red", "fontSize": "30px" }}>{"₹" + selectedProduct['price']}</span>(Inclusive of all taxes)</span>
+                        <span><span style={{ "color": "red", "fontSize": "30px" }}>{" " + selectedProduct['price']}</span>(Inclusive of all taxes)</span>
                     </div>
                     <Button disabled={disableBtn} onClick={e => addToCart({ ...selectedProduct })} color="primary" variant="contained" startIcon={<ControlPointIcon />}>Add to cart</Button>
                 </div>

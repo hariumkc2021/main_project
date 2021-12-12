@@ -22,7 +22,7 @@ function CheckOut(props) {
 
 
     const placeOrder = async () => {
-        let orderObj=await axios.post(`http://localhost:5001/orders`,{amount:totalAmount+15});
+        let orderObj=await axios.post(`https://umkc-project.herokuapp.com/orders`,{amount:totalAmount+15});
         console.log("orderObj",orderObj);
         const options = {
             key: "rzp_test_kjMNJwg5AL3w2f", // Enter the Key ID generated from the Dashboard
